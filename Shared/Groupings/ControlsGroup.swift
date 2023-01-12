@@ -34,11 +34,13 @@ struct ControlsGroup: View {
             SectionView(title: "Picker", description: "A control for selecting from a set of mutually exclusive values. The default style is usually a wheel on iOS; in a grouped list like this one it’s styled like a navigation link. The default style is a pop-up button on macOS.") {
                 Group {
                     Picker("Flavor", selection: $selectedFlavor) {
-                        ForEach(Flavor.allCases) { Text($0.description).tag($0) }
+                        ForEach(Flavor.allCases) { Text($0.description).tag($0).accessibilityIdentifier("flavor_picker_\($0)")
+                        }
                     }
                     #if os(iOS) || os(OSX)
                     Picker("Flavor", selection: $selectedFlavor) {
-                        ForEach(Flavor.allCases) { Text($0.description).tag($0) }
+                        ForEach(Flavor.allCases) { Text($0.description).tag($0).accessibility(identifier: "flavor_picker_segmented_\($0)")
+                        }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     #endif
@@ -52,7 +54,8 @@ struct ControlsGroup: View {
                     
                     #if os(iOS)
                     Picker("Flavor", selection: $selectedFlavor) {
-                        ForEach(Flavor.allCases) { Text($0.description).tag($0) }
+                        ForEach(Flavor.allCases) { Text($0.description).tag($0).accessibilityIdentifier("flavor_picker_wheel_\($0)")
+                        }
                     }
                     .pickerStyle(WheelPickerStyle())
                     #endif

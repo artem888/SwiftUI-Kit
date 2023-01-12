@@ -14,10 +14,15 @@ struct ContentView: View {
             Grouping(title: "Buttons",
                      icon: "capsule",
                      content: { ButtonsGroup() })
-            .accessibility(identifier: "buttons_item")
+            .accessibilityIdentifier("buttons_item")
             
             Grouping(title: "Colors", icon: "paintpalette", content: { ColorsGroup() })
-            Grouping(title: "Controls", icon: "slider.horizontal.3", content: { ControlsGroup() })
+            
+            Grouping(title: "Controls",
+                     icon: "slider.horizontal.3",
+                     content: { ControlsGroup() })
+            .accessibilityIdentifier("controls_item")
+            
             Grouping(title: "Fonts", icon: "textformat", content: { FontsGroup() })
             
             #if os(iOS)

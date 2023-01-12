@@ -32,7 +32,7 @@ struct ButtonsGroup: View {
                                 primaryButton: .default(Text("Confirm")),
                                 secondaryButton: .cancel()
                             )
-                        }.accessibility(identifier: "show_alert_item")
+                        }.accessibilityIdentifier("show_alert_item")
                         
                         Button(action: {
                             self.showingSheet = true
@@ -61,7 +61,7 @@ struct ButtonsGroup: View {
                                 .cancel()
                             ])
                         }
-                        .accessibility(identifier: "show_action_sheet_item")
+                        .accessibilityIdentifier("show_action_sheet_item")
                         #endif
                     }
                 }
@@ -131,7 +131,7 @@ struct ButtonsGroup: View {
                 content: {
                     NavigationLink(destination: Text("Destination")) {
                         Text("Next")
-                    }.accessibility(identifier: "navigation_link_next_item")
+                    }.accessibilityIdentifier("navigation_link_next_item")
                 }
             )
             

@@ -1,0 +1,15 @@
+appId: com.swiftui.kit
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: "controls_item"
+- tapOn:
+    point: "84%,23%"
+- tapOn:
+    text: "Chocolate"
+    index: 0
+- tapOn:
+    id: "flavor_picker_Vanilla"
+- tapOn:
+    id: "flavor_picker_segmented_Strawberry"
