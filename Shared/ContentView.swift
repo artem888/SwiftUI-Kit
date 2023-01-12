@@ -11,7 +11,11 @@ struct ContentView: View {
     
     var list: some View {
         List {
-            Grouping(title: "Buttons", icon: "capsule", content: { ButtonsGroup() })
+            Grouping(title: "Buttons",
+                     icon: "capsule",
+                     content: { ButtonsGroup() })
+            .accessibility(identifier: "buttons_item")
+            
             Grouping(title: "Colors", icon: "paintpalette", content: { ColorsGroup() })
             Grouping(title: "Controls", icon: "slider.horizontal.3", content: { ControlsGroup() })
             Grouping(title: "Fonts", icon: "textformat", content: { FontsGroup() })
