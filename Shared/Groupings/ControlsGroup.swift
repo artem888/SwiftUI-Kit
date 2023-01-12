@@ -39,7 +39,7 @@ struct ControlsGroup: View {
                     }
                     #if os(iOS) || os(OSX)
                     Picker("Flavor", selection: $selectedFlavor) {
-                        ForEach(Flavor.allCases) { Text($0.description).tag($0).accessibility(identifier: "flavor_picker_segmented_\($0)")
+                        ForEach(Flavor.allCases) { Text($0.description).tag($0).accessibilityIdentifier( "flavor_picker_segmented_\($0)")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())

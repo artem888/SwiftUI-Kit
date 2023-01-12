@@ -1,0 +1,9 @@
+appId: com.swiftui.kit
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: "buttons_item"
+- tapOn: "link_item"
+- tapOn:
+    id: "breadcrumb"

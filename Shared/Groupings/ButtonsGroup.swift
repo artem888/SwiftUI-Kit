@@ -72,7 +72,7 @@ struct ButtonsGroup: View {
                 title: "Link",
                 description: "A control for navigating to a URL.",
                 content: {
-                    Link("lil.software", destination: URL(string: "https://lil.software")!)
+                    Link("lil.software", destination: URL(string: "https://lil.software")!).accessibilityLabel("link_item")
                 }
             )
             #endif
